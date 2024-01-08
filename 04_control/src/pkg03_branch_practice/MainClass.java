@@ -1,5 +1,3 @@
-
-
 package pkg03_branch_practice;
 
 public class MainClass {
@@ -21,7 +19,7 @@ public static void method1() {
     }
     
     // 선생님 풀이
-    if(month >=3 && month <= 5) {
+    if(month >= 3 && month <= 5) {
       season = "봄";
     } else if (month >= 6 && month <= 8) {
       season = "여름";
@@ -47,6 +45,7 @@ public static void method1() {
     System.out.println(season);
     
     
+ 
   }
   
   public static void method2() {
