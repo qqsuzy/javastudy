@@ -1,0 +1,52 @@
+# JAVA
+
+method() human
+main() jvm
+
+method 호출하여 실행해야 하며, main에서 호출 함
+
+----------------------------------------------------------
+①
+package pkg02_parameter;
+
+public class MainClass {
+public static void main(String[] args) {
+
+calculator.method8(new Adder());
+ }
+}
+----------------------------------------------------------
+②
+package pkg02_parameter;
+
+public class Calculator {
+
+void method8(Adder adder) {
+   adder.add(1, 2, 3);
+ }
+}
+----------------------------------------------------------
+③
+
+package pkg02_parameter;
+
+public class Adder {
+
+  // Adder 클래스가 add를 가지고 있음.
+  void add(int... params) {
+    int total = 0;
+    for (int param : params) {
+      total += param;
+    }
+    System.out.println("합 :" + total);
+  }
+  
+}
+
+
+메소드를 호출한 곳으로 되돌려준다.
+
+----------------------------------------------------------
+
+
+devops
