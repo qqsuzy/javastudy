@@ -7,7 +7,7 @@ public class MainClass {
     // 객체 선언 및 생성 
     Calculator calculator = new Calculator();
     
-    // 메소드 호출 (인수,인자,argument를 가지고 있으며, 주는 곳이다.)
+    // 메소드 호출 (인수, 인자(argument), parameter를 가지고 있으며, 주는 곳이다.)
     // 호출하는 방법에 따라 구성이 달라짐?
     
     calculator.method1();

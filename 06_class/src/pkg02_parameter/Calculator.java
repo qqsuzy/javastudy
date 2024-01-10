@@ -20,7 +20,7 @@ public class Calculator {
     System.out.println("method1");  
   }
   
-//형변환 규칙을 어기지 않으면 매개변수를 받을 수 있으며, 타입을 동일하게 적용 권장함.
+ //형변환 규칙을 어기지 않으면 매개변수를 받을 수 있으며, 타입을 동일하게 적용 권장함.
  // 같은 값을 받을 때는 이름을 동일하게 적용하기를 권장함! (int a)
  void method2(int a) {
    System.out.println("method2 :" + a);
