@@ -32,24 +32,28 @@ public class Customer {
     this.cart = cart;
   }
 
+  // method 호출 부분에서 Exception 처리할 수 있는 2가지 방법
+  // 1. try - catch
+  // 2. throws       ->  다시 회피하기
+  
   // 물건 넣기
-  public void addToCart(Product product) { // 물건(product) 받아온다.
+  public void addToCart(Product product) throws RuntimeException { // 물건(product) 받아온다.
     cart.addProduct(product);
   }
   
   // 물건 바꾸기
-  public void changeCart(int idx, Product product) {
+  public void changeCart(int idx, Product product) throws RuntimeException {
     cart.changeProduct(idx, product);
   }
   
   // 물건 빼기
-  public void removeCart(int idx) {
+  public void removeCart(int idx) throws RuntimeException {
     cart.removeProduct(idx);
   }
   
   // 구매
   // 반환 : 영수증
-  public String buy() {
+  public String buy() throws RuntimeException {
     
     String receipt = "영수증\n";
     
@@ -66,8 +70,7 @@ public class Customer {
       
       // 구매 가능 여부 체크
       if(money < total) {
-        System.out.println("구매금액이 부족합니다.");
-        return null;   // 구매를 못했으니 영수증이 나오지 않는다.
+        throw new RuntimeException("구매금액이 부족합니다.");
       }
       
       // 영수증 만들기 (한줄에 하나씩 출력)
