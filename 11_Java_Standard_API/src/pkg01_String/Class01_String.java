@@ -269,7 +269,7 @@ public class Class01_String {
   }
   
   public static void main(String[] args) {
-    method4();
+    method8();
     
   }
 
