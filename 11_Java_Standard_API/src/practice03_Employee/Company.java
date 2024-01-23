@@ -51,7 +51,7 @@ public class Company {
     if(employees.contains(employee)) { 
       throw new RuntimeException("이미 등록된 사원 번호입니다.");   
     }
-   employee.add(employee);
+   employees.add(employee);
   }
   
   // 해고
