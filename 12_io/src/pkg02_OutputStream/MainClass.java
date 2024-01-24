@@ -203,7 +203,7 @@ public class MainClass {
     
     try {
       
-      out = (new DataOutputStream(new FileOutputStream(file)));
+      out =  (new DataOutputStream(new FileOutputStream(file)));
       
       // 출력할 데이터
       String name = "홍길동";
@@ -219,7 +219,7 @@ public class MainClass {
       out.writeBoolean(isAudult);
       out.writeChar(gender);
       
-      // 데이터 출력 스트림 닫기
+      // 데이터 출력 스트림 닫기 (닫지 않으면 파일이 비정상적으로 생성될 수 있다.)
       out.close();
       
       System.out.println(file.length() + "바이트 크기의" + file.getPath() + "파일이 생성되었습니다.");
@@ -269,7 +269,7 @@ public class MainClass {
   }
   
   public static void main(String[] args) {
-    method5();
+    method4();
     
   }
   

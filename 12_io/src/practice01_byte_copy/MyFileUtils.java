@@ -53,11 +53,7 @@ public class MyFileUtils {
     
     // 버퍼 입력 스트림 닫기
     in.close();
-    out.close();
-    
-    // 확인
-    System.out.println(srcFile.getPath() + " 파일을 복사하였습니다." );
-    
+   
     
   } catch (IOException e) {
     e.printStackTrace();
@@ -66,6 +62,9 @@ public class MyFileUtils {
   }
   // 파일 이동 메소드
   public static void fileMove(String src, String dest) {
+    
+    fileCopy(src, dest);
+    new File(src).delete();
     
     
   }
