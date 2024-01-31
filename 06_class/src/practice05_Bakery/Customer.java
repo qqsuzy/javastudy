@@ -8,7 +8,7 @@ public class Customer {
 
   public Customer() {
 
-
+  }
   public Customer(int money, int count) {
     super();
     this.money = money;
@@ -29,7 +29,7 @@ public class Customer {
 
   public void setCount(int count) {
     this.count = count;
-
+  }
   
   // 구매
   // 인자 : 구매할 가게, 구매할 빵 개수, 구매할 때 낼 돈

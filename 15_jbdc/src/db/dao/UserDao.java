@@ -12,12 +12,12 @@ import db.dto.UserDto;
 
 /*
  * DAO (Database Access Object)
+ * 1. 데이터베이스에 접근해서 쿼리문을 실행하고 쿼리문의 실행 결과를 받는 객체이다.
+ * 2. 하나의 객체만 만들어서 사용하는 Singleton Pattern 으로 DAO 객체를 생성한다.
+ * 
  * 데이터베이스 접속할 때 사용하는 객체
  * 클래스명은 DAO로 연결하고자 하는 테이블명을 앞에 표기하여 정한다. ex) UserDao
  * 
- * 1. Database Access Object
- * 2. 데이터베이스에 접근해서 쿼리문을 실행하고 쿼리문의 실행 결과를 받는 객체이다.
- * 3. 하나의 객체만 만들어서 사용하는 Singleton Pattern 으로 DAO 객체를 생성한다.
  */
 
 /*
@@ -33,7 +33,7 @@ public class UserDao {
   private UserDao() {}
   private static UserDao userDao = new UserDao();
   public static UserDao getInstance() {
-    return userDao;
+    return userDao;   // 만들어 준 객체를 반환
     
   }
   
@@ -42,7 +42,7 @@ public class UserDao {
   private PreparedStatement ps;
   private ResultSet rs;
   
-  // private 메소드 (UserDao 내부에서 호출하는 메소드)
+  // private 메소드 (UserDao 내부에서 호출하는 메소드라 private 처리)
   private void connection() { 
     
     try {
@@ -61,7 +61,7 @@ public class UserDao {
  
   }
 
-  // close() 메소드를 호출하면 rs, ps, con 을 닫아준다.
+  // close() 메소드를 호출하면 rs, ps, con 을 닫아준다. (내부에서 호출하는 메소드라 private 처리)
   private void close() {
     
     try {
@@ -75,7 +75,6 @@ public class UserDao {
   }
   
   // public 메소드 (실제 기능을 담당하는 메소드)
-
   // 모든 사용자 조회하기 : selectUsers, selectUserList, getUsers, getUserList 등
   public List<UserDto> getUsers() {
 
@@ -85,7 +84,7 @@ public class UserDao {
       
       connection();
       
-      String sql = "SELECT USER_NO, USER_NAME, USER_TEL, JOIN_DT FROM USER_T OERDER BY DESC";
+      String sql = "SELECT USER_NO, USER_NAME, USER_TEL, JOIN_DT FROM USER_T ORDER BY USER_NO DESC";
       ps = con.prepareStatement(sql);
       rs = ps.executeQuery();
       while(rs.next()) {
@@ -107,8 +106,7 @@ public class UserDao {
     return users;
     
   }
-  
-  
+    
   // 특정 사용자 조회하기 : getUser, getUserByNo 등
   public UserDto getUser(int user_no) {  // 사용자 번호를 받아와서 해당 사용자를 반환해준다.
     
@@ -193,7 +191,6 @@ public class UserDao {
     return result;
 
   }
-  
   
   // 사용자 삭제  : deleteUser, removeUser 등
   public int removeUser(int user_no) {
