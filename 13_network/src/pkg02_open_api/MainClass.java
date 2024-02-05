@@ -15,7 +15,9 @@ public class MainClass {
   public static void main(String[] args) {
 
     StringBuilder builder = new StringBuilder();
+    // 주소
     builder.append("http://apis.data.go.kr/B552061/AccidentDeath/getRestTrafficAccidentDeath");
+    // 서버 측으로 보내는 데이터들
     builder.append("?serviceKey=").append("8E4t9bsYHNOU3pVnkEWhcPcU6X1djLiP68aLh5buKrsZRhU%2FYmp%2BnD%2FJ8sT7qCf6wvQ%2BSm1YsDDfj%2BuE0p3opw%3D%3D");
     builder.append("&searchYear=").append(2022);
     builder.append("&siDo=").append(1100);

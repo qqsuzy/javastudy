@@ -32,7 +32,7 @@ public class MainClass {
     // 배열 요소(배열이름 + 대괄호 2개 + 인덱스 2개)
     
     // 1번째 1차원 배열의 요소 3개
-    System.out.println(arr[0][0]); // arr[0] : 첫 번쨰 배열의 이름
+    System.out.println(arr[0][0]); // arr[0] : 첫 번째 배열의 이름
     System.out.println(arr[0][1]); 
     System.out.println(arr[0][2]);
     
@@ -105,7 +105,7 @@ public class MainClass {
     }
     
     // 2차원으로 출력 (크게 틀이 바뀌지 않으므로 그냥 외우기..!!)
-    // Systme.out.printf("%d", 3) : 일정 간격으로 출력? 
+    // System.out.printf("%d", 3) : 일정 간격으로 출력? 
     for(int i = 0; i < arr.length; i++) {
       for(int j = 0; j < arr[i].length; j++) {
         // System.out.printf("%3d", arr[i][j]);
